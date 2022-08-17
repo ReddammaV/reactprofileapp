@@ -14,7 +14,7 @@ export const userMeAPI = () => {
   return axios.get(`${baseURL}/api/v1/user/me`, { headers: authHeader() });
 };
 
-export const logoutUser = (history) => {
+export const logoutUser = (navigate) => {
   localStorage.removeItem("jwtToken");
-  history.push("/login");
+  navigate("/login");
 };
